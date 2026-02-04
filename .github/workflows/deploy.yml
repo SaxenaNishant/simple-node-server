@@ -8,7 +8,7 @@ on:
 jobs:
     build-and-deploy:
         runs-on: ubuntu-22.04
-        environment: auth_prod
+        environment: Auth_prod
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
@@ -37,8 +37,7 @@ jobs:
                 aws-region: ${{ secrets.AWS_REGION }}
             
             - name: Deploy to S3
-              run:
-                aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
+              run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
 
             - name: Invalidate CloudFront
               run: |
