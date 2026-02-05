@@ -28,7 +28,7 @@ function App() {
     setName(e.target.value)
   }
   return <>
-    <h1>Search</h1>
+    <h1>Debouncing Search</h1>
 
     <input type="text" name="name" value={name} onChange={handleChange} placeholder='enter name...'/>
     {loading && <p>Loading...</p>}
